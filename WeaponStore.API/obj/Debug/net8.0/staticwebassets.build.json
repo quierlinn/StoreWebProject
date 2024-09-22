@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "k3bUCAmoDoJeINvbFzIte5sjL4rNqXXe9ZUKudN9Yw4=",
+  "Source": "WeaponStore.API",
+  "BasePath": "_content/WeaponStore.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,4 @@
+E:\C#Projects\WeaponStore\obj\Debug\net8.0\WeaponStore.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#Projects\WeaponStore\obj\Debug\net8.0\WeaponStore.Application.AssemblyInfoInputs.cache
+E:\C#Projects\WeaponStore\obj\Debug\net8.0\WeaponStore.Application.AssemblyInfo.cs
+E:\C#Projects\WeaponStore\obj\Debug\net8.0\WeaponStore.Application.csproj.CoreCompileInputs.cache
