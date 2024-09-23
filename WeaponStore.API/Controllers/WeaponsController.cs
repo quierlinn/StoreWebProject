@@ -37,7 +37,9 @@ public class WeaponsController : ControllerBase
             return BadRequest(error);
         }
 
-        return Ok(weapon);
+        var weaponId = await _weaponsService.CreateWeapon(weapon);
+
+        return Ok(weaponId);
     }
 
     [HttpPut("{id:int}")]

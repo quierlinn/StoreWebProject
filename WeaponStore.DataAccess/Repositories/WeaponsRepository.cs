@@ -6,7 +6,7 @@ using WeaponStore.DataAccess.Entities;
 
 namespace WeaponStore.DataAccess.Repositories;
 
-public class WeaponsRepository: IWeaponsRepository
+public class WeaponsRepository : IWeaponsRepository
 {
     private WeaponStoreDbContext DbContext { get; }
 
@@ -18,7 +18,7 @@ public class WeaponsRepository: IWeaponsRepository
     public async Task<List<Weapon>> GetWeapons()
     {
         var weaponEntities = await DbContext.Weapons.ToListAsync();
-        var weapons = weaponEntities.Select(w => Weapon.Create( w.Name, w.Description, w.Price).weapon).ToList();
+        var weapons = weaponEntities.Select(w => Weapon.Create(w.Name, w.Description, w.Price).weapon).ToList();
         return weapons;
     }
 
@@ -37,13 +37,17 @@ public class WeaponsRepository: IWeaponsRepository
 
     public async Task<int> UpdateWeapons(int id, string name, string description, decimal price)
     {
-        var weapon = await DbContext.Weapons.FindAsync(id);
+        await DbContext.Weapons.Where(w => w.Id == id).ExecuteUpdateAsync(s =>
+            s.SetProperty(w => w.Name, name)
+                .SetProperty(w => w.Description, description).
+                SetProperty(w => w.Price, price));
+
         return id;
     }
 
     public async Task<int> DeleteWeapons(int id)
     {
         await DbContext.Weapons.Where(b => b.Id == id).ExecuteDeleteAsync();
-                return id;
+        return id;
     }
 }
