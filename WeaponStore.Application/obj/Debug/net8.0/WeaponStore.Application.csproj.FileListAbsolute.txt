@@ -32,3 +32,4 @@ E:\C#Projects\WeaponStore\WeaponStore.Application\obj\Debug\net8.0\refint\Weapon
 E:\C#Projects\WeaponStore\WeaponStore.Application\obj\Debug\net8.0\WeaponStore.Application.pdb
 E:\C#Projects\WeaponStore\WeaponStore.Application\obj\Debug\net8.0\WeaponStore.Application.genruntimeconfig.cache
 E:\C#Projects\WeaponStore\WeaponStore.Application\obj\Debug\net8.0\ref\WeaponStore.Application.dll
+E:\C#Projects\WeaponStore\WeaponStore.Application\obj\Debug\net8.0\WeaponStore.Application.sourcelink.json

@@ -759,7 +759,10 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.0-rc.1"
         },
         "runtime": {
-          "WeaponStore.Core.dll": {}
+          "WeaponStore.Core.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

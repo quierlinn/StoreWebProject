@@ -18,7 +18,7 @@ public class WeaponsRepository: IWeaponsRepository
     public async Task<List<Weapon>> GetWeapons()
     {
         var weaponEntities = await DbContext.Weapons.ToListAsync();
-        var weapons = weaponEntities.Select(w => Weapon.Create(w.Id, w.Name, w.Description, w.Price).weapon).ToList();
+        var weapons = weaponEntities.Select(w => Weapon.Create( w.Name, w.Description, w.Price).weapon).ToList();
         return weapons;
     }
 
@@ -26,7 +26,6 @@ public class WeaponsRepository: IWeaponsRepository
     {
         var weaponEntity = new WeaponEntity
         {
-            Id = weapon.Id,
             Name = weapon.Name,
             Description = weapon.Description,
             Price = weapon.Price
@@ -44,7 +43,7 @@ public class WeaponsRepository: IWeaponsRepository
 
     public async Task<int> DeleteWeapons(int id)
     {
-        await EntityFrameworkQueryableExtensions.ExecuteDeleteAsync(DbContext.Weapons.Where(b => b.Id == id));
+        await DbContext.Weapons.Where(b => b.Id == id).ExecuteDeleteAsync();
                 return id;
     }
 }

@@ -280,3 +280,4 @@ E:\C#Projects\WeaponStore\WeaponStore.API\obj\Debug\net8.0\refint\WeaponStore.AP
 E:\C#Projects\WeaponStore\WeaponStore.API\obj\Debug\net8.0\WeaponStore.API.pdb
 E:\C#Projects\WeaponStore\WeaponStore.API\obj\Debug\net8.0\WeaponStore.API.genruntimeconfig.cache
 E:\C#Projects\WeaponStore\WeaponStore.API\obj\Debug\net8.0\ref\WeaponStore.API.dll
+E:\C#Projects\WeaponStore\WeaponStore.API\obj\Debug\net8.0\WeaponStore.API.sourcelink.json

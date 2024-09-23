@@ -32,3 +32,4 @@ E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\refint\WeaponS
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.DataAccess.pdb
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.DataAccess.genruntimeconfig.cache
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\ref\WeaponStore.DataAccess.dll
+E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.DataAccess.sourcelink.json

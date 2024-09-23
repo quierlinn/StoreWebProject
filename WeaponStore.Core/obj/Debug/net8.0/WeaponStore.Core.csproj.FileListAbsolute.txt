@@ -26,3 +26,4 @@ E:\C#Projects\WeaponStore\WeaponStore.Core\obj\Debug\net8.0\refint\WeaponStore.C
 E:\C#Projects\WeaponStore\WeaponStore.Core\obj\Debug\net8.0\WeaponStore.Core.pdb
 E:\C#Projects\WeaponStore\WeaponStore.Core\obj\Debug\net8.0\WeaponStore.Core.genruntimeconfig.cache
 E:\C#Projects\WeaponStore\WeaponStore.Core\obj\Debug\net8.0\ref\WeaponStore.Core.dll
+E:\C#Projects\WeaponStore\WeaponStore.Core\obj\Debug\net8.0\WeaponStore.Core.sourcelink.json
