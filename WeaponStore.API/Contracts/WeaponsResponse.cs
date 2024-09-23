@@ -1,7 +1,7 @@
 ﻿namespace WeaponStore.Contracts;
 
 public record WeaponsResponse(
-    int id,
-    string name,
-    string description,
+    int Id,
+    string Name,
+    string Description,
     decimal Price);

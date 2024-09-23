@@ -18,7 +18,7 @@ public class WeaponsRepository : IWeaponsRepository
     public async Task<List<Weapon>> GetWeapons()
     {
         var weaponEntities = await DbContext.Weapons.ToListAsync();
-        var weapons = weaponEntities.Select(w => Weapon.Create(w.Name, w.Description, w.Price).weapon).ToList();
+        var weapons = weaponEntities.Select(w => Weapon.Create(w.Id, w.Name, w.Description, w.Price).weapon).ToList();
         return weapons;
     }
 

@@ -7,7 +7,14 @@ public class Weapon
     public string Description { get;} = string.Empty;
     public decimal Price { get;}
 
-    public Weapon( string name, string description, decimal price)
+    public Weapon(int id, string name, string description, decimal price)
+    {
+        Id = id;
+        Name = name;
+        Description = description;
+        Price = price;
+    }
+    public Weapon(string name, string description, decimal price)
     {
         Name = name;
         Description = description;
@@ -18,6 +25,16 @@ public class Weapon
     {
         var error = string.Empty;
         var weapon = new Weapon( name, description, price);
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            error = "Name is required";
+        }
+        return (weapon, error);
+    }
+    public static (Weapon weapon, string error) Create(int id, string name, string description, decimal price)
+    {
+        var error = string.Empty;
+        var weapon = new Weapon(id, name, description, price);
         if (string.IsNullOrWhiteSpace(name))
         {
             error = "Name is required";
