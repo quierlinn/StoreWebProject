@@ -8,8 +8,7 @@ namespace WeaponStore.Controllers;
 [ApiController]
 [Route("[Controller]")]
 public class WeaponsController : ControllerBase
-{
-    Random random = new Random();
+{ 
     private readonly IWeaponsService _weaponsService;
 
     public WeaponsController(IWeaponsService weaponsService)

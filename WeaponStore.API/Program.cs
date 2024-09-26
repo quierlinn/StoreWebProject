@@ -4,6 +4,7 @@ using WeaponStore.Application.Services;
 using WeaponStore.Core.Abstractions;
 using WeaponStore.DataAccess;
 using WeaponStore.DataAccess.Repositories;
+using WeaponStore.Infrastructure;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,10 @@ builder.Services.AddDbContext<WeaponStoreDbContext>(options =>
 });
 builder.Services.AddScoped<IWeaponsService, WeaponsService>();
 builder.Services.AddScoped<IWeaponsRepository, WeaponsRepository>();
+builder.Services.AddScoped<IUsersService, UserService>();
+builder.Services.AddScoped<IUsersRepository, UserRepository>();
+builder.Services.AddScoped<IJwtProvider, JwtProvider>();
+builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
