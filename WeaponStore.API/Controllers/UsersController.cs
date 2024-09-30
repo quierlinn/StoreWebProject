@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WeaponStore.Application.Services;
 using WeaponStore.Contracts;
 using WeaponStore.Core.Abstractions;
@@ -14,16 +15,18 @@ public class UsersController : ControllerBase
     {
         _usersService = usersService;
     }
+    [Route("register")]
     [HttpPost]
-    public static async Task<IResult> RegisterUser(UserService userService, UsersRequest usersRequest)
+    public async Task<IResult> Registration(UsersRequest usersRequest)
     {
-        userService.RegisterUser(usersRequest.Login, usersRequest.Password, usersRequest.Email);
+        _usersService.RegisterUser(usersRequest.Login, usersRequest.Password, usersRequest.Email);
         return Results.Ok();
     }
+    [Route("login")]
     [HttpPost]
-    public static async Task<IResult> LoginUser(UserService userService, UsersRequest usersRequest)
+    public async Task<IActionResult> Login (UsersRequest usersRequest)
     {
-        var token = await userService.Login(usersRequest.Login, usersRequest.Password);
-        return Results.Ok(token);
+        var token = await _usersService.LoginUser(usersRequest.Login, usersRequest.Password);
+        return (IActionResult)Results.Ok(token);
     }
 }

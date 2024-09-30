@@ -9,6 +9,7 @@ public sealed class WeaponStoreDbContext : DbContext
     public DbSet<UserEntity> Users { get; set; }
     public WeaponStoreDbContext(DbContextOptions<WeaponStoreDbContext>options) : base(options)
     {
+        
     }
 
     

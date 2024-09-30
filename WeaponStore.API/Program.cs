@@ -1,5 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileSystemGlobbing.Internal.Patterns;
 using WeaponStore.Application.Services;
 using WeaponStore.Core.Abstractions;
 using WeaponStore.DataAccess;
@@ -27,7 +28,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseRouting();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

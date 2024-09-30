@@ -4,7 +4,7 @@ using WeaponStore.Core.Models;
 namespace WeaponStore.Application.Services;
 
 public class UserService : IUsersService
-{ 
+{
     private IPasswordHasher _passwordHasher;
     private IUsersRepository _usersRepository;
     private IJwtProvider _jwtProvider;
@@ -23,13 +23,13 @@ public class UserService : IUsersService
         await _usersRepository.AddUsersAsync(user);
     }
 
-    public async Task<string> Login(string login, string password)
+    public async Task<string> LoginUser(string username, string password)
     {
-        var user = await _usersRepository.GetUserByLoginAsync(login);
+        var user = await _usersRepository.GetUserByLoginAsync(username);
         var result = _passwordHasher.VerifyHashedPassword(user.Password, password);
         if (result == false)
         {
-            throw new Exception($"Invalid login or password");
+            throw new Exception("Invalid login or password");
         }
 
         var token = _jwtProvider.GenerateToken(user);

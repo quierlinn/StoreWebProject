@@ -8,8 +8,8 @@ public class UserConfiguration
     public void Configure(EntityTypeBuilder<UserEntity> builder)
     {
         builder.HasKey(u => u.Id);
-        builder.Property(u => u.Login);
-        builder.Property(u => u.Password);
-        builder.Property(u => u.Email);
+        builder.Property(u => u.Login).IsRequired();
+        builder.Property(u => u.Password).IsRequired();
+        builder.Property(u => u.Email).IsRequired();
     }
 }
