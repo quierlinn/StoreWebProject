@@ -4,7 +4,7 @@ public class User
 {
     public int Id { get; }
     public string Login { get; }
-    public string Password { get; }
+    public string Password { get; set; }
     public string Email { get; }
 
     public User(int id, string login, string password, string email)

@@ -5,9 +5,9 @@ namespace WeaponStore.Application.Services;
 
 public class UserService : IUsersService
 {
-    private IPasswordHasher _passwordHasher;
-    private IUsersRepository _usersRepository;
-    private IJwtProvider _jwtProvider;
+    private readonly IPasswordHasher _passwordHasher;
+    private readonly IUsersRepository _usersRepository;
+    private readonly IJwtProvider _jwtProvider;
 
     public UserService(IPasswordHasher passwordHasher, IUsersRepository usersRepository, IJwtProvider jwtProvider)
     {
@@ -26,12 +26,11 @@ public class UserService : IUsersService
     public async Task<string> LoginUser(string username, string password)
     {
         var user = await _usersRepository.GetUserByLoginAsync(username);
-        var result = _passwordHasher.VerifyHashedPassword(user.Password, password);
+        var result = _passwordHasher.VerifyHashedPassword(password, user.Password);
         if (result == false)
         {
             throw new Exception("Invalid login or password");
         }
-
         var token = _jwtProvider.GenerateToken(user);
         return token;
     }

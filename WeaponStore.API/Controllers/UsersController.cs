@@ -19,14 +19,14 @@ public class UsersController : ControllerBase
     [HttpPost]
     public async Task<IResult> Registration(UsersRequest usersRequest)
     {
-        _usersService.RegisterUser(usersRequest.Login, usersRequest.Password, usersRequest.Email);
+        await _usersService.RegisterUser(usersRequest.Login, usersRequest.Password, usersRequest.Email);
         return Results.Ok();
     }
     [Route("login")]
     [HttpPost]
-    public async Task<IActionResult> Login (UsersRequest usersRequest)
+    public async Task<IResult> Login (UsersRequest usersRequest)
     {
         var token = await _usersService.LoginUser(usersRequest.Login, usersRequest.Password);
-        return (IActionResult)Results.Ok(token);
+        return Results.Ok(token);
     }
 }

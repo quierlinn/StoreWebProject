@@ -9,6 +9,7 @@ using WeaponStore.Infrastructure;
 
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.Configure<JWTOptions>(builder.Configuration.GetSection(nameof(JWTOptions)));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

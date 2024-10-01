@@ -6,12 +6,11 @@ public class PasswordHasher : IPasswordHasher
 {
     public string HashPassword(string password)
     {
-        BCrypt.Net.BCrypt.HashPassword(password);
-        return password;
+        return BCrypt.Net.BCrypt.HashPassword(password);
     }
 
-    public bool VerifyHashedPassword(string hashedPassword, string password)
+    public bool VerifyHashedPassword(string password, string hashedPassword)
     {
-        return BCrypt.Net.BCrypt.EnhancedVerify(password, hashedPassword);
+        return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
     }
 }
