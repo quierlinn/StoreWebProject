@@ -10,7 +10,6 @@ namespace WeaponStore.Infrastructure;
 
 public class JwtProvider : IJwtProvider
 {
-    
     private readonly JWTOptions _options;
     public JwtProvider(IOptions<JWTOptions> options)
     {
@@ -22,6 +21,8 @@ public class JwtProvider : IJwtProvider
         var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecretKey)), SecurityAlgorithms.HmacSha256Signature);
         
         var token = new JwtSecurityToken(
+            issuer: AuthOptions.ISSUER,
+            audience: AuthOptions.AUDIENCE,
             claims: claims,
             signingCredentials: signingCredentials,
             expires: DateTime.UtcNow.AddHours(_options.ExpitesHours)

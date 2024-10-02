@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using WeaponStore.Application.Services;
 using WeaponStore.Contracts;
 using WeaponStore.Core.Abstractions;
+using System.Web;
 
 namespace WeaponStore.Controllers;
 [ApiController]
@@ -27,6 +28,7 @@ public class UsersController : ControllerBase
     public async Task<IResult> Login (UsersRequest usersRequest)
     {
         var token = await _usersService.LoginUser(usersRequest.Login, usersRequest.Password);
+        HttpContext.Response.Cookies.Append("token", token);
         return Results.Ok(token);
     }
 }
