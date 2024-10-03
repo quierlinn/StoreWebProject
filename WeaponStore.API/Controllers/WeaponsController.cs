@@ -1,15 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WeaponStore.Contracts;
 using WeaponStore.Core.Abstractions;
 using WeaponStore.Core.Models;
 
 namespace WeaponStore.Controllers;
-
+[Authorize]
 [ApiController]
 [Route("[Controller]")]
 public class WeaponsController : ControllerBase
 {
-    Random random = new Random();
     private readonly IWeaponsService _weaponsService;
 
     public WeaponsController(IWeaponsService weaponsService)
@@ -24,7 +25,6 @@ public class WeaponsController : ControllerBase
         var weaponsResponse = weapons.Select(w => new WeaponsResponse(w.Id, w.Name, w.Description, w.Price));
         return Ok(weaponsResponse);
     }
-
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] WeaponsRequest request)
     {
@@ -41,14 +41,12 @@ public class WeaponsController : ControllerBase
 
         return Ok(weaponId);
     }
-
     [HttpPut("{id:int}")]
     public async Task<IActionResult> Put(int id, [FromBody] WeaponsRequest request)
     {
         var weaponId = await _weaponsService.UpdateWeapon(id, request.Name, request.Description, request.Price);
         return Ok(weaponId);
     }
-
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> Delete(int id)
     {

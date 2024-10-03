@@ -281,3 +281,14 @@ E:\C#Projects\WeaponStore\WeaponStore.API\obj\Debug\net8.0\WeaponStore.API.pdb
 E:\C#Projects\WeaponStore\WeaponStore.API\obj\Debug\net8.0\WeaponStore.API.genruntimeconfig.cache
 E:\C#Projects\WeaponStore\WeaponStore.API\obj\Debug\net8.0\ref\WeaponStore.API.dll
 E:\C#Projects\WeaponStore\WeaponStore.API\obj\Debug\net8.0\WeaponStore.API.sourcelink.json
+E:\C#Projects\WeaponStore\WeaponStore.API\bin\Debug\net8.0\BCrypt.Net-Next.dll
+E:\C#Projects\WeaponStore\WeaponStore.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\C#Projects\WeaponStore\WeaponStore.API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+E:\C#Projects\WeaponStore\WeaponStore.API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\C#Projects\WeaponStore\WeaponStore.API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+E:\C#Projects\WeaponStore\WeaponStore.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\C#Projects\WeaponStore\WeaponStore.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\C#Projects\WeaponStore\WeaponStore.API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\C#Projects\WeaponStore\WeaponStore.API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+E:\C#Projects\WeaponStore\WeaponStore.API\bin\Debug\net8.0\WeaponStore.Infrastructure.dll
+E:\C#Projects\WeaponStore\WeaponStore.API\bin\Debug\net8.0\WeaponStore.Infrastructure.pdb
