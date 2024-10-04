@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeaponStore.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27d014f97481fe23b00320cc0cd712f636679f39")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a12d997a631eb3c21d1cae7aae6373c9fd5619c4")]
 [assembly: System.Reflection.AssemblyProductAttribute("WeaponStore.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WeaponStore.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

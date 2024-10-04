@@ -6,6 +6,7 @@ public class User
     public string Login { get; }
     public string Password { get; set; }
     public string Email { get; }
+    public ICollection<Role> Roles { get; }
 
     public User(int id, string login, string password, string email)
     {

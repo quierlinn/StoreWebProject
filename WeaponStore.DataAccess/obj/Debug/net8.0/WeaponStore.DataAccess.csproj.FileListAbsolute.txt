@@ -26,10 +26,10 @@ E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.Da
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.DataAccess.AssemblyInfoInputs.cache
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.DataAccess.AssemblyInfo.cs
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.DataAccess.csproj.CoreCompileInputs.cache
+E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.DataAccess.sourcelink.json
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponSt.6233F345.Up2Date
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.DataAccess.dll
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\refint\WeaponStore.DataAccess.dll
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.DataAccess.pdb
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.DataAccess.genruntimeconfig.cache
 E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\ref\WeaponStore.DataAccess.dll
-E:\C#Projects\WeaponStore\WeaponStore.DataAccess\obj\Debug\net8.0\WeaponStore.DataAccess.sourcelink.json

@@ -40,12 +40,15 @@ builder.Services.AddDbContext<WeaponStoreDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(WeaponStoreDbContext)));
 });
+builder.Services.Configure<AuthorizationOptions>(builder.Configuration.GetSection(nameof(AuthorizationOptions)));
 builder.Services.AddScoped<IWeaponsService, WeaponsService>();
 builder.Services.AddScoped<IWeaponsRepository, WeaponsRepository>();
 builder.Services.AddScoped<IUsersService, UserService>();
 builder.Services.AddScoped<IUsersRepository, UserRepository>();
 builder.Services.AddScoped<IJwtProvider, JwtProvider>();
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
@@ -54,7 +57,6 @@ if (app.Environment.IsDevelopment())
 }
 app.UseRouting();
 app.UseAuthentication();
-app.UseAuthorization();
-
+app.UseAuthorization(); 
 app.MapControllers();
 app.Run();
