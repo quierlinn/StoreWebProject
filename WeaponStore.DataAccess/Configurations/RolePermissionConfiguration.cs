@@ -18,10 +18,11 @@ public class RolePermissionConfiguration : IEntityTypeConfiguration<RolePermissi
     public void Configure(EntityTypeBuilder<RolePermissionEntity> builder)
     {
         builder.HasKey(r => new { r.RoleId, r.PermissionId });
-        builder.HasData(_authorizationOtpions.RolePermissions.SelectMany<RolePermissions, RolePermissionEntity>(rp => rp.Permission.Select(p => new RolePermissionEntity
-        {
-            RoleId = (int)Enum.Parse<RoleEnum>(rp.Role),
-            PermissionId = (int)Enum.Parse<PermissionEnum>(p)
-        })).ToArray());
+        builder.HasData(_authorizationOtpions.RolePermissions.SelectMany(rp => rp.Permission.Select(p =>
+            new RolePermissionEntity
+            {
+                RoleId = (int)Enum.Parse<RoleEnum>(rp.Role),
+                PermissionId = (int)Enum.Parse<PermissionEnum>(p)
+            })).ToArray());
     }
 }

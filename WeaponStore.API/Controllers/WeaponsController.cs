@@ -25,6 +25,7 @@ public class WeaponsController : ControllerBase
         var weaponsResponse = weapons.Select(w => new WeaponsResponse(w.Id, w.Name, w.Description, w.Price));
         return Ok(weaponsResponse);
     }
+    [Authorize(Roles = "1")]
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] WeaponsRequest request)
     {
@@ -41,12 +42,14 @@ public class WeaponsController : ControllerBase
 
         return Ok(weaponId);
     }
+    [Authorize(Roles = "1")]
     [HttpPut("{id:int}")]
     public async Task<IActionResult> Put(int id, [FromBody] WeaponsRequest request)
     {
         var weaponId = await _weaponsService.UpdateWeapon(id, request.Name, request.Description, request.Price);
         return Ok(weaponId);
     }
+    [Authorize(Roles = "1")]
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> Delete(int id)
     {

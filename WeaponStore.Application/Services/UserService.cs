@@ -7,13 +7,15 @@ public class UserService : IUsersService
 {
     private readonly IPasswordHasher _passwordHasher;
     private readonly IUsersRepository _usersRepository;
+    private readonly IRoleRepository _roleRepository;
     private readonly IJwtProvider _jwtProvider;
 
-    public UserService(IPasswordHasher passwordHasher, IUsersRepository usersRepository, IJwtProvider jwtProvider)
+    public UserService(IPasswordHasher passwordHasher,IRoleRepository roleRepository,  IUsersRepository usersRepository, IJwtProvider jwtProvider)
     {
         _passwordHasher = passwordHasher;
         _usersRepository = usersRepository;
         _jwtProvider = jwtProvider;
+        _roleRepository = roleRepository;
     }
 
     public async Task RegisterUser(string login, string password, string email)
@@ -26,12 +28,13 @@ public class UserService : IUsersService
     public async Task<string> LoginUser(string username, string password)
     {
         var user = await _usersRepository.GetUserByLoginAsync(username);
+        var role = _roleRepository.GetRoleByUserIdAsync(user.Id);
         var result = _passwordHasher.VerifyHashedPassword(password, user.Password);
         if (result == false)
         {
             throw new Exception("Invalid login or password");
         }
-        var token = _jwtProvider.GenerateToken(user);
+        var token = _jwtProvider.GenerateToken(user, role.Id);
         return token;
     }
 }

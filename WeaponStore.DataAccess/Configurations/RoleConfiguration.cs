@@ -12,7 +12,7 @@ public class RoleConfiguration : IEntityTypeConfiguration<RoleEntity>
 
     public void Configure(EntityTypeBuilder<RoleEntity> builder)
     {
-        builder.HasKey(re => re.Id);
+        builder.HasKey(r => r.Id);
                 builder.HasMany(r => r.Permissions).WithMany(p => p.Roles).UsingEntity<RolePermissionEntity>(
                     l => l.HasOne<PermissionEntity>().WithMany().HasForeignKey(e => e.PermissionId),
                     r => r.HasOne<RoleEntity>().WithMany().HasForeignKey(e => e.RoleId));

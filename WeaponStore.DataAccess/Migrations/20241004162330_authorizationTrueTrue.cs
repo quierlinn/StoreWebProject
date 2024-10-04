@@ -3,14 +3,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace WeaponStore.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class authorizationTrue : Migration
+    public partial class authorizationTrueTrue : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -24,6 +21,16 @@ namespace WeaponStore.DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PermissionEntity", x => x.Id);
+                });
+            migrationBuilder.InsertData(
+                table: "PermissionEntity",
+                columns: new string[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Read" },
+                    { 2, "Write"},
+                    { 4, "Delete" },
+                    { 3, "Update"},
                 });
             
 
@@ -50,6 +57,14 @@ namespace WeaponStore.DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.Id);
+                });
+            migrationBuilder.InsertData(
+                table: "Roles",
+                columns: new string [] {"Id", "Name"},
+                values: new object[,]
+                {
+                    {1, "Admin" },
+                    {2, "User"}
                 });
 
             migrationBuilder.CreateTable(
@@ -156,4 +171,4 @@ namespace WeaponStore.DataAccess.Migrations
                 name: "Roles");
         }
     }
-}
+    }
