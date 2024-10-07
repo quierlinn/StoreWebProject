@@ -3,15 +3,18 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace WeaponStore.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class authorizationTrueTrue : Migration
+    public partial class init : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "PermissionEntity",
+                name: "Permissions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -20,22 +23,11 @@ namespace WeaponStore.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PermissionEntity", x => x.Id);
+                    table.PrimaryKey("PK_Permissions", x => x.Id);
                 });
-            migrationBuilder.InsertData(
-                table: "PermissionEntity",
-                columns: new string[] { "Id", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Read" },
-                    { 2, "Write"},
-                    { 4, "Delete" },
-                    { 3, "Update"},
-                });
-            
 
             migrationBuilder.CreateTable(
-                name: "RolePermissionEntity",
+                name: "RolePermissions",
                 columns: table => new
                 {
                     PermissionId = table.Column<int>(type: "integer", nullable: false),
@@ -43,7 +35,7 @@ namespace WeaponStore.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RolePermissionEntity", x => new { x.RoleId, x.PermissionId });
+                    table.PrimaryKey("PK_RolePermission", x => new { x.RoleId, x.PermissionId });
                 });
 
             migrationBuilder.CreateTable(
@@ -58,14 +50,6 @@ namespace WeaponStore.DataAccess.Migrations
                 {
                     table.PrimaryKey("PK_Roles", x => x.Id);
                 });
-            migrationBuilder.InsertData(
-                table: "Roles",
-                columns: new string [] {"Id", "Name"},
-                values: new object[,]
-                {
-                    {1, "Admin" },
-                    {2, "User"}
-                });
 
             migrationBuilder.CreateTable(
                 name: "UserRoles",
@@ -76,6 +60,37 @@ namespace WeaponStore.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_RoleUser", x => new { x.RoleId, x.UserId });
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Login = table.Column<string>(type: "text", nullable: false),
+                    Password = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Weapons",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    Price = table.Column<decimal>(type: "numeric", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Weapons", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -89,9 +104,9 @@ namespace WeaponStore.DataAccess.Migrations
                 {
                     table.PrimaryKey("PK_PermissionEntityRoleEntity", x => new { x.PermissionsId, x.RolesId });
                     table.ForeignKey(
-                        name: "FK_PermissionEntityRoleEntity_PermissionEntity_PermissionsId",
+                        name: "FK_PermissionEntityRoleEntity_Permissions_PermissionsId",
                         column: x => x.PermissionsId,
-                        principalTable: "PermissionEntity",
+                        principalTable: "Permissions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -126,8 +141,8 @@ namespace WeaponStore.DataAccess.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "RolePermissionEntity",
+            /*migrationBuilder.InsertData(
+                table: "RolePermissions",
                 columns: new[] { "PermissionId", "RoleId" },
                 values: new object[,]
                 {
@@ -136,7 +151,7 @@ namespace WeaponStore.DataAccess.Migrations
                     { 3, 1 },
                     { 4, 1 },
                     { 1, 2 }
-                });
+                });*/
 
             migrationBuilder.CreateIndex(
                 name: "IX_PermissionEntityRoleEntity_RolesId",
@@ -159,16 +174,22 @@ namespace WeaponStore.DataAccess.Migrations
                 name: "RoleEntityUserEntity");
 
             migrationBuilder.DropTable(
-                name: "RolePermissionEntity");
+                name: "RolePermissions");
 
             migrationBuilder.DropTable(
                 name: "UserRoles");
 
             migrationBuilder.DropTable(
-                name: "PermissionEntity");
+                name: "Weapons");
+
+            migrationBuilder.DropTable(
+                name: "Permissions");
 
             migrationBuilder.DropTable(
                 name: "Roles");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
-    }
+}

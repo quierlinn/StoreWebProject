@@ -17,7 +17,7 @@ public class JwtProvider : IJwtProvider
     }
     public string GenerateToken(User user, int role)
     {
-        Claim[] claims = [new(ClaimTypes.Role, role.ToString())];
+        Claim[] claims = [new( "UserId", user.Id.ToString())];
         var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecretKey)), SecurityAlgorithms.HmacSha256Signature);
         
         var token = new JwtSecurityToken(

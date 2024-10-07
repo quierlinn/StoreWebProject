@@ -65,7 +65,7 @@ namespace WeaponStore.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PermissionEntity");
+                    b.ToTable("Permissions");
                 });
 
             modelBuilder.Entity("WeaponStore.DataAccess.Entities.RoleEntity", b =>
@@ -95,7 +95,7 @@ namespace WeaponStore.DataAccess.Migrations
 
                     b.HasKey("RoleId", "PermissionId");
 
-                    b.ToTable("RolePermissionEntity");
+                    b.ToTable("RolePermissions");
 
                     b.HasData(
                         new
