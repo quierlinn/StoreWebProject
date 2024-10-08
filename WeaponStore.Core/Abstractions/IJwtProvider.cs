@@ -4,5 +4,5 @@ namespace WeaponStore.Core.Abstractions;
 
 public interface IJwtProvider
 {
-    public string GenerateToken(User user);
+    public string GenerateToken(User user, int role);
 }

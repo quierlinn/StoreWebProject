@@ -1,14 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "9jTJjiOP0Pg=",
+  "dgSpecHash": "aZtvxe3OK0Y=",
   "success": true,
   "projectFilePath": "E:\\C#Projects\\WeaponStore\\WeaponStore.Infrastructure\\WeaponStore.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\quierlinn\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\quierlinn\\.nuget\\packages\\fluentmigrator\\6.2.0\\fluentmigrator.6.2.0.nupkg.sha512",
+    "C:\\Users\\quierlinn\\.nuget\\packages\\fluentmigrator.abstractions\\6.2.0\\fluentmigrator.abstractions.6.2.0.nupkg.sha512",
+    "C:\\Users\\quierlinn\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
+    "C:\\Users\\quierlinn\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.8\\microsoft.aspnetcore.authorization.8.0.8.nupkg.sha512",
+    "C:\\Users\\quierlinn\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\quierlinn\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.8\\microsoft.aspnetcore.metadata.8.0.8.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.0-rc.1.24451.1\\microsoft.entityframeworkcore.9.0.0-rc.1.24451.1.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.0-rc.1.24451.1\\microsoft.entityframeworkcore.abstractions.9.0.0-rc.1.24451.1.nupkg.sha512",
@@ -34,10 +41,12 @@
     "C:\\Users\\quierlinn\\.nuget\\packages\\npgsql\\8.0.4\\npgsql.8.0.4.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.0-rc.1\\npgsql.entityframeworkcore.postgresql.9.0.0-rc.1.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
+    "C:\\Users\\quierlinn\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.0-rc.1.24431.7\\system.diagnostics.diagnosticsource.9.0.0-rc.1.24431.7.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
     "C:\\Users\\quierlinn\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
-    "C:\\Users\\quierlinn\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+    "C:\\Users\\quierlinn\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
+    "C:\\Users\\quierlinn\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

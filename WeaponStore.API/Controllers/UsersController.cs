@@ -16,6 +16,7 @@ public class UsersController : ControllerBase
     {
         _usersService = usersService;
     }
+    [AllowAnonymous]
     [Route("register")]
     [HttpPost]
     public async Task<IResult> Registration(UsersRequest usersRequest)
@@ -23,6 +24,7 @@ public class UsersController : ControllerBase
         await _usersService.RegisterUser(usersRequest.Login, usersRequest.Password, usersRequest.Email);
         return Results.Ok();
     }
+    [AllowAnonymous]
     [Route("login")]
     [HttpPost]
     public async Task<IResult> Login (UsersRequest usersRequest)

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeaponStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27d014f97481fe23b00320cc0cd712f636679f39")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b34f5399d750f0b9738d2fd453b378203725a216")]
 [assembly: System.Reflection.AssemblyProductAttribute("WeaponStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WeaponStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
